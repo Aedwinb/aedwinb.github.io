@@ -3,7 +3,7 @@
 ## Tour
 
 ### Title
-tour.name = Virtual Academy V.0.3
+tour.name = Virtual Academy V.0.3.1
 
 ## Skin
 
