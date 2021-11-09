@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "V-Academy OmniVR",
+"productVersion": "0.1",
+"dataUrl": "Build03.data.unityweb",
+"wasmCodeUrl": "Build03.wasm.code.unityweb",
+"wasmFrameworkUrl": "Build03.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.29f1"
+}
