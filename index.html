@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | 2023 VN EQ Test POC</title>
+    <title>Unity WebGL Player | PETRA - Game Sample - Web</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=480 height=800></canvas>
+      <canvas id="unity-canvas" width=1280 height=768></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">2023 VN EQ Test POC</div>
+        <div id="unity-build-title">PETRA - Game Sample - Web</div>
       </div>
     </div>
     <script>
@@ -56,15 +56,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Builds.loader.js";
+      var loaderUrl = buildUrl + "/Mini Trivia Build (test).loader.js";
       var config = {
-        dataUrl: buildUrl + "/Builds.data.br",
-        frameworkUrl: buildUrl + "/Builds.framework.js.br",
-        codeUrl: buildUrl + "/Builds.wasm.br",
+        dataUrl: buildUrl + "/Mini Trivia Build (test).data",
+        frameworkUrl: buildUrl + "/Mini Trivia Build (test).framework.js",
+        codeUrl: buildUrl + "/Mini Trivia Build (test).wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "PrimeOmni",
-        productName: "2023 VN EQ Test POC",
-        productVersion: "1.0",
+        companyName: "PrimeSkills",
+        productName: "PETRA - Game Sample - Web",
+        productVersion: "0.1",
         showBanner: unityShowBanner,
       };
 
@@ -76,27 +76,15 @@
       // config.matchWebGLToCanvasSize = false;
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
+        // Avoid draining fillrate performance on mobile devices,
+        // and default/override low DPI mode on mobile browsers.
+        config.devicePixelRatio = 1;
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-        canvas.style.width = "480px";
-        canvas.style.height = "800px";
+        canvas.style.width = "1280px";
+        canvas.style.height = "768px";
       }
-
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
