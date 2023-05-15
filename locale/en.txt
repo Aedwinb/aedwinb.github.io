@@ -1,0 +1,23 @@
+#: locale=en
+
+## Media
+
+### Image
+imlevel_73E45EC0_7DF5_3E60_41D0_5305E9D2A28F.url = media/popup_693BE66E_7DF5_B472_41AD_27CD00A02AC9_en_0_0.png
+imlevel_73E46EC0_7DF5_3E60_41D1_CE4DE4CDBAD5.url = media/popup_693BE66E_7DF5_B472_41AD_27CD00A02AC9_en_0_1.png
+imlevel_73E47EC0_7DF5_3E60_41D6_EE8D38873BC7.url = media/popup_693BE66E_7DF5_B472_41AD_27CD00A02AC9_en_0_2.png
+imlevel_73F8CAF3_7DF5_2627_41C8_4EBD3814AF8E.url = media/popup_6F95F7E0_7D5F_0803_41CB_CA71D59D209C_en_0_0.png
+imlevel_73FE3AF4_7DF5_2621_41D1_2F10546F6D8A.url = media/popup_6F95F7E0_7D5F_0803_41CB_CA71D59D209C_en_0_1.png
+
+### Popup Image
+
+### Title
+panorama_715F7C5A_7D41_3807_4144_46D3E0CD3D08.label = Neo Jakarta_0-A
+panorama_77AD15F7_7D41_080D_41CE_76A8D96AD74C.label = Neo Jakarta_0-B
+
+## Tour
+
+### Description
+
+### Title
+tour.name = Edwin OmniVR Neo Jakarta Preview
