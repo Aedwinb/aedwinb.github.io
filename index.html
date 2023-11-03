@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | WebGLShooter</title>
-    <link rel="shortcut icon" href="TemplateData/Primeskill_Logo.ico">
+    <title>Unity WebGL Player | Neo JKT 2</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">WebGLShooter</div>
+        <div id="unity-build-title">Neo JKT 2</div>
       </div>
     </div>
     <script>
@@ -56,15 +56,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Build.loader.js";
+      var loaderUrl = buildUrl + "/Web GL.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Build.data",
-        frameworkUrl: buildUrl + "/Build.framework.js",
-        codeUrl: buildUrl + "/Build.wasm",
+        dataUrl: buildUrl + "/Web GL.data.gz",
+        frameworkUrl: buildUrl + "/Web GL.framework.js.gz",
+        codeUrl: buildUrl + "/Web GL.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "WebGLShooter",
-        productVersion: "1.0",
+        productName: "Neo JKT 2",
+        productVersion: "0.1",
         showBanner: unityShowBanner,
       };
 
@@ -80,7 +80,7 @@
 
         var meta = document.createElement('meta');
         meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, viewport-fit=cover, orientation=landscape, shrink-to-fit=yes';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
         canvas.className = "unity-mobile";
@@ -89,7 +89,7 @@
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-        //unityShowBanner('WebGL builds are not supported on mobile devices.');
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
@@ -98,14 +98,13 @@
       }
 
       loadingBar.style.display = "block";
-      var unityBox = null;
+
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
-            unityBox = unityInstance;
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
@@ -114,24 +113,7 @@
           alert(message);
         });
       };
-
-      function sendToken() {
-	    console.log("Token received");
-        alert("Kwek kwek kwek");
-		//unityBox.SendMessage('LMSConnector', 'TokenReceive', token);
-	  }
-      function RaiseBPM(){
-        unityBox.SendMessage('Song Modifier','RaiseBPM');
-      }
-      function LowerBPM(){
-        unityBox.SendMessage('Song Modifier','LowerBPM');
-      }
       document.body.appendChild(script);
     </script>
-    
-    <div>
-        <button type="button" onclick="RaiseBPM()"> Beat Faster </button><br>
-        <button type="button" onclick="LowerBPM()"> Beat Slower </button>
-    </div>
   </body>
 </html>
